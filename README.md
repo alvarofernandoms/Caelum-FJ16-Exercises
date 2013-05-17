@@ -12,8 +12,8 @@ Usando o Eclipse e JUnit, no Ubuntu 12.04.
 Autores
 ------
 
-Álvaro Fernando.
-Fagner Rodrigues.
+Álvaro Fernando (co-piloto).
+Fagner Rodrigues (piloto).
 
 Licença
 -------
