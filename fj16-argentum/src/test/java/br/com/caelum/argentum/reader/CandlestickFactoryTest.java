@@ -9,6 +9,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import br.com.caelum.argentum.reader.Candlestick;
+
 public class CandlestickFactoryTest {
 
 	@Test
@@ -35,7 +37,8 @@ public class CandlestickFactoryTest {
 		Assert.assertEquals(1676.0, candle.getVolume(), 0.00001);
 		
 	}
-		
+	
+	
 	@Test
 		public void semNegocioGeraCandleComZeros()  {
 			Calendar hoje = Calendar.getInstance();
@@ -45,7 +48,7 @@ public class CandlestickFactoryTest {
 			CandlestickFactoryTest fabrica = new CandlestickFactoryTest();
 			Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 			
-			Assert.assertArrayEquals(0.0, candle.getVolume(), 0.00001);
+			Assert.assertEquals(0.0, candle.getVolume(), 0.00001);
 			
 	}
 	
@@ -60,10 +63,12 @@ public class CandlestickFactoryTest {
 		CandlestickFactoryTest fabrica = new CandlestickFactoryTest();
 		Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 		
-		Assert.assertArrayEquals(40.5, candle.getAbertura(), 0.00001);
-		Assert.assertArrayEquals(40.5, candle.getFechamento(), 0.00001);
-		Assert.assertArrayEquals(40.5, candle.getMinimo(), 0.00001);
-		Assert.assertArrayEquals(40.5, candle.getMaximo(), 0.00001);
-		Assert.assertArrayEquals(4050.0, candle.getVolume(), 0.00001);
+		Assert.assertEquals(40.5, candle.getAbertura(), 0.00001);
+		Assert.assertEquals(40.5, candle.getFechamento(), 0.00001);
+		Assert.assertEquals(40.5, candle.getMinimo(), 0.00001);
+		Assert.assertEquals(40.5, candle.getMaximo(), 0.00001);
+		Assert.assertEquals(4050.0, candle.getVolume(), 0.00001);
 	}
+	
+	
 }
