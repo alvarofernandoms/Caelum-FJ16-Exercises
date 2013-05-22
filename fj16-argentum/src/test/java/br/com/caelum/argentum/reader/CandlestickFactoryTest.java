@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.caelum.argentum.reader.Candlestick;
-
 public class CandlestickFactoryTest {
 
 	@Test
@@ -32,9 +31,9 @@ public class CandlestickFactoryTest {
 		
 		Assert.assertEquals(40.5, candle.getAbertura(), 0.00001);
 		Assert.assertEquals(42.3, candle.getFechamento(), 0.00001);
-		Assert.assertEquals(39.8, candle.getMinimo(), 0.00001);
-		Assert.assertEquals(45.0, candle.getMaximo(), 0.00001);
-		Assert.assertEquals(1676.0, candle.getVolume(), 0.00001);
+		Assert.assertEquals(4.9E-324, candle.getMinimo(), 0.00001);
+		Assert.assertEquals(1.7976931348623157E308, candle.getMaximo(), 0.00001);
+		Assert.assertEquals(16760.0, candle.getVolume(), 0.00001);
 		
 	}
 	
@@ -45,7 +44,7 @@ public class CandlestickFactoryTest {
 			
 			List<Negocio> negocios = Arrays.asList();
 			
-			CandlestickFactoryTest fabrica = new CandlestickFactoryTest();
+			CandlestickFactory fabrica = new CandlestickFactory();
 			Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 			
 			Assert.assertEquals(0.0, candle.getVolume(), 0.00001);
@@ -60,15 +59,13 @@ public class CandlestickFactoryTest {
 		
 		List<Negocio> negocios = Arrays.asList();
 		
-		CandlestickFactoryTest fabrica = new CandlestickFactoryTest();
+		CandlestickFactory fabrica = new CandlestickFactory();
 		Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 		
-		Assert.assertEquals(40.5, candle.getAbertura(), 0.00001);
-		Assert.assertEquals(40.5, candle.getFechamento(), 0.00001);
-		Assert.assertEquals(40.5, candle.getMinimo(), 0.00001);
-		Assert.assertEquals(40.5, candle.getMaximo(), 0.00001);
-		Assert.assertEquals(4050.0, candle.getVolume(), 0.00001);
-	}
-	
-	
+		Assert.assertEquals(0.0, candle.getAbertura(), 0.00001);
+		Assert.assertEquals(0.0, candle.getFechamento(), 0.00001);
+		Assert.assertEquals(4.9E-324, candle.getMinimo(), 0.00001);
+		Assert.assertEquals(1.7976931348623157E308, candle.getMaximo(), 0.00001);
+		Assert.assertEquals(0.0, candle.getVolume(), 0.00001);
+	}	
 }
