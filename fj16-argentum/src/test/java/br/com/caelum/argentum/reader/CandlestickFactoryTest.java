@@ -47,6 +47,10 @@ public class CandlestickFactoryTest {
 			CandlestickFactory fabrica = new CandlestickFactory();
 			Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 			
+			Assert.assertEquals(0.0, candle.getAbertura(), 0.00001);
+			Assert.assertEquals(0.0, candle.getFechamento(), 0.00001);
+			Assert.assertEquals(0.0, candle.getMinimo(), 0.00001);
+			Assert.assertEquals(1.7976931348623157E308, candle.getMaximo(), 0.00001);
 			Assert.assertEquals(0.0, candle.getVolume(), 0.00001);
 			
 	}

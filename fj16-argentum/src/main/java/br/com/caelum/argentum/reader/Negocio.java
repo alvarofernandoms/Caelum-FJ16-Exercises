@@ -7,6 +7,10 @@ public final class Negocio {
 	private final int quantidade;
 	private final Calendar data;
 	public Negocio (double preco, int quantidade, Calendar data) {
+		if(data == null){
+			throw new IllegalArgumentException("data nao pode ser nula");
+		}
+		
 		this.preco = preco;
 		this.quantidade = quantidade;
 		this.data = data;
@@ -18,7 +22,7 @@ public final class Negocio {
 		return quantidade;
 	}
 	public Calendar getData() {
-		return data;
+		return (Calendar) this.data.clone();
 	}
 	public double getVolume() {
 		return preco * quantidade;
