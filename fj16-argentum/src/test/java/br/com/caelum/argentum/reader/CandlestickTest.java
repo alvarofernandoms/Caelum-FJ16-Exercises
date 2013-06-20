@@ -39,7 +39,7 @@ public class CandlestickTest {
 	public void maximoNaoPodeTerValroNegativo() {
 		new Candlestick(10, 20, 20, -1, 10000, Calendar.getInstance());
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void volumeNaoPodeTerValorNegativo() {
 		new Candlestick(10, 20, 20, 50, -1, Calendar.getInstance());

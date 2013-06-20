@@ -55,15 +55,15 @@ public class CandlestickFactoryTest {
 
 		Negocio negocio1 = new Negocio(40.5, 100, hoje);
 
-		List<Negocio> negocios = Arrays.asList();
+		List<Negocio> negocios = Arrays.asList(negocio1);
 
 		CandlestickFactory fabrica = new CandlestickFactory();
 		Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
 
-		Assert.assertEquals(0.0, candle.getAbertura(), 0.00001);
-		Assert.assertEquals(0.0, candle.getFechamento(), 0.00001);
+		Assert.assertEquals(40.5, candle.getAbertura(), 0.00001);
+		Assert.assertEquals(40.5, candle.getFechamento(), 0.00001);
 		Assert.assertEquals(4.9E-324, candle.getMinimo(), 0.00001);
 		Assert.assertEquals(1.7976931348623157E308, candle.getMaximo(), 0.00001);
-		Assert.assertEquals(0.0, candle.getVolume(), 0.00001);
+		Assert.assertEquals(4050.0, candle.getVolume(), 0.00001);
 	}
 }
