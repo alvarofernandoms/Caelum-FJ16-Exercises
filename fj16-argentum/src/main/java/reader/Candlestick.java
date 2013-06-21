@@ -15,17 +15,17 @@ public final class Candlestick {
 
 		if (minimo >= maximo) {
 			throw new IllegalArgumentException(
-					"Pre�o m�nimo n�o pode ser maior que o pre�o m�ximo.");
+					"Preço mínimo não pode ser maior que o preço máximo.");
 		}
 
 		if (data == null) {
-			throw new IllegalArgumentException("Data n�o pode ser nula.");
+			throw new IllegalArgumentException("Data não pode ser nula.");
 		}
 
 		if (abertura < 0 || fechamento < 0 || minimo < 0 || maximo < 0
 				|| volume < 0) {
 			throw new IllegalArgumentException(
-					"N�o � permitido atributos negativos.");
+					"Não é permitido atributos negativos.");
 		}
 		this.abertura = abertura;
 		this.fechamento = fechamento;
